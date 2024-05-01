@@ -1,5 +1,7 @@
 <template>
-  <div>PublicarVaga</div>
+  <div>
+    <h1>PublicarVaga</h1>
+  </div>
 </template>
 
 <script>

@@ -1,7 +1,10 @@
 <template>
   <div>
     <TopoComponent />
-    <ConteudoComponent />
+    <button @click="desmontarComponente()">
+      Desmontar o componente conteúdo
+    </button>
+    <ConteudoComponent v-if="visibilidade" />
   </div>
 </template>
 
@@ -14,6 +17,14 @@ export default {
   components: {
     ConteudoComponent,
     TopoComponent,
+  },
+  data: () => ({
+    visibilidade: true,
+  }),
+  methods: {
+    desmontarComponente() {
+      this.visibilidade = false;
+    },
   },
 };
 </script>

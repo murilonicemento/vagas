@@ -1,8 +1,12 @@
 <template>
   <div>
-    <p>Conteúdo</p>
-    <HomeView />
-    <PublicarVaga />
+    <h1>{{ titulo }}</h1>
+    <button @click="atualizarComponente()">Atualizar</button>
+    <button @click="conteudo = 'HomeView'">Home</button>
+    <button @click="conteudo = 'PublicarVaga'">Publicar Vaga</button>
+    <!-- <HomeView /> -->
+    <!-- <PublicarVaga /> -->
+    <component :is="conteudo" />
   </div>
 </template>
 
@@ -14,6 +18,55 @@ export default {
   components: {
     HomeView,
     PublicarVaga,
+  },
+  data: () => ({
+    teste: "O componente foi criado",
+    titulo: "Componente conteúdo",
+    conteudo: "home",
+  }),
+  methods: {
+    atualizarComponente() {
+      this.titulo += "*";
+    },
+  },
+  beforeCreate() {
+    console.log("Antes de criar", this.teste);
+  },
+  created() {
+    console.log("Criado", this.teste);
+  },
+  beforeMount() {
+    console.log("Antes de montar o template");
+  },
+  mounted() {
+    console.log("Montado");
+  },
+  beforeUpdate() {
+    console.log("Antes de atualizar");
+  },
+  updated() {
+    console.log("Atualizado");
+  },
+  beforeUnmount() {
+    console.log("Antes de desmontar/destruir");
+  },
+  unmounted() {
+    console.log("Desmontado/destruído");
+  },
+  errorCaptured() {
+    console.log("Erro capturado");
+  },
+  renderTracked() {
+    console.log("Re-renderização rastreada");
+  },
+  renderTriggered() {
+    console.log("Re-renderização acionada");
+  },
+  activated() {
+    console.log("Componente é ativado");
+  },
+  deactivated() {
+    console.log("Componente desativado");
   },
 };
 </script>
