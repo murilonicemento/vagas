@@ -1,4 +1,4 @@
-# Vagas
+# Projeto Vagas
 
 ## Project setup
 ```
