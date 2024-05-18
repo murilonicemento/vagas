@@ -5,22 +5,16 @@
     </div>
     <div class="row mt-5">
       <div class="col-4">
-        <div class="h-100 p-5 rounded-6 border bg-dark text-white">
-          <p>Vagas abertas</p>
-          <h2>25</h2>
-        </div>
+        <IndicadorComponent titulo="Vagas abertas" indicador="100" />
       </div>
       <div class="col-4">
-        <div class="h-100 p-5 rounded-6 border bg-dark text-white">
-          <p>Profissionais cadastrados</p>
-          <h2>125</h2>
-        </div>
+        <IndicadorComponent
+          titulo="Profissionais cadastrados"
+          indicador="225"
+        />
       </div>
       <div class="col-4">
-        <div class="h-100 p-5 rounded-6 border bg-light text-white">
-          <p>Visitantes online</p>
-          <h2>15</h2>
-        </div>
+        <IndicadorComponent titulo="Visitantes online" indicador="25" />
       </div>
     </div>
   </div>
@@ -28,10 +22,12 @@
 
 <script>
 import PesquisarVaga from "../comuns/PesquisarVaga.vue";
+import IndicadorComponent from "@/components/comuns/IndicadorComponent.vue";
 export default {
   name: "HomeView",
   components: {
     PesquisarVaga,
+    IndicadorComponent,
   },
 };
 </script>
