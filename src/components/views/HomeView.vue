@@ -4,6 +4,11 @@
       <div class="col"><PesquisarVaga /></div>
     </div>
     <div class="row mt-5">
+      <div class="col">
+        <VagasComponent />
+      </div>
+    </div>
+    <div class="row mt-5">
       <div class="col-4">
         <IndicadorComponent
           titulo="Vagas abertas"
@@ -35,11 +40,13 @@
 <script>
 import PesquisarVaga from "../comuns/PesquisarVaga.vue";
 import IndicadorComponent from "@/components/comuns/IndicadorComponent.vue";
+import VagasComponent from "../comuns/VagasComponent.vue";
 export default {
   name: "HomeView",
   components: {
     PesquisarVaga,
     IndicadorComponent,
+    VagasComponent,
   },
 };
 </script>
