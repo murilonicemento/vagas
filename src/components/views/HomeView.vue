@@ -5,16 +5,28 @@
     </div>
     <div class="row mt-5">
       <div class="col-4">
-        <IndicadorComponent titulo="Vagas abertas" indicador="100" />
+        <IndicadorComponent
+          titulo="Vagas abertas"
+          indicador="100"
+          bg="bg-dark"
+          color="text-white"
+        />
       </div>
       <div class="col-4">
         <IndicadorComponent
           titulo="Profissionais cadastrados"
           indicador="225"
+          bg="bg-dark"
+          color="text-white"
         />
       </div>
       <div class="col-4">
-        <IndicadorComponent titulo="Visitantes online" indicador="25" />
+        <IndicadorComponent
+          titulo="Visitantes online"
+          indicador="25"
+          bg="bg-light"
+          color="text-dark"
+        />
       </div>
     </div>
   </div>
