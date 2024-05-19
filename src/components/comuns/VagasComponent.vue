@@ -31,7 +31,8 @@ export default {
     },
     descricao: {
       type: String,
-      required: true,
+      required: false,
+      default: "Valor default da prop",
     },
     salario: {
       type: [Number, String],
@@ -39,7 +40,10 @@ export default {
     },
     modalidade: {
       type: String,
-      required: true,
+      required: false,
+      default() {
+        return "*".repeat(20);
+      },
     },
     tipo: {
       type: String,
