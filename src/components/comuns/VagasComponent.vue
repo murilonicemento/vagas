@@ -18,12 +18,37 @@ export default {
   name: "VagasComponent",
   // props: ["titulo", "descricao", "salario", "modalidade", "tipo", "publicacao"],
   props: {
-    titulo: String,
-    descricao: String,
-    salario: Number,
-    modalidade: String,
-    tipo: String,
-    publicacao: String,
+    titulo: {
+      type: String,
+      required: true,
+      validator(prop) {
+        console.log("Prop: ", prop);
+        if (prop.length < 4) return false;
+        return true;
+        // return true; -> se estiver válido
+        // return false; -> se estiver inválido
+      },
+    },
+    descricao: {
+      type: String,
+      required: true,
+    },
+    salario: {
+      type: [Number, String],
+      required: true,
+    },
+    modalidade: {
+      type: String,
+      required: true,
+    },
+    tipo: {
+      type: String,
+      required: true,
+    },
+    publicacao: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>
