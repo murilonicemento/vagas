@@ -4,15 +4,16 @@
     <button @click="atualizarComponente()">Atualizar</button>
     <button @click="conteudo = 'HomeView'">Home</button>
     <button @click="conteudo = 'PublicarVaga'">Publicar Vaga</button>
-    <!-- <HomeView /> -->
-    <!-- <PublicarVaga /> -->
-    <component :is="conteudo" />
+    <keep-alive>
+      <component :is="conteudo" />
+    </keep-alive>
   </div>
 </template>
 
 <script>
-import HomeView from "../views/HomeView.vue";
 import PublicarVaga from "../views/PublicarVaga.vue";
+import HomeView from "../views/HomeView.vue";
+
 export default {
   name: "ConteudoComponent",
   components: {
@@ -22,7 +23,7 @@ export default {
   data: () => ({
     teste: "O componente foi criado",
     titulo: "Componente conteúdo",
-    conteudo: "home",
+    conteudo: "HomeView",
   }),
   methods: {
     atualizarComponente() {
