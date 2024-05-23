@@ -52,7 +52,7 @@ export default {
   data: () => ({
     vagas: [],
   }),
-  mounted() {
+  activated() {
     this.vagas = JSON.parse(localStorage.getItem("vagas"));
   },
 };
