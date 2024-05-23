@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopoComponent />
+    <TopoComponent @nomeDoEvento="acao($event)" />
     <button @click="desmontarComponente()">
       Desmontar o componente conteúdo
     </button>
@@ -24,6 +24,9 @@ export default {
   methods: {
     desmontarComponente() {
       this.visibilidade = false;
+    },
+    acao(event) {
+      console.log(event);
     },
   },
 };
