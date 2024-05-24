@@ -20,7 +20,7 @@
               class="nav-link active"
               aria-current="page"
               href="#"
-              @click="navegarPara()"
+              @click="funcaoCallback()"
               >Home</a
             >
           </li>
@@ -29,7 +29,7 @@
               class="nav-link active"
               aria-current="page"
               href="#"
-              @click="navegarPara()"
+              @click="funcaoCallback()"
               >Publicar Vaga</a
             >
           </li>
@@ -42,14 +42,17 @@
 <script>
 export default {
   name: "TopoComponent",
-  methods: {
-    navegarPara() {
-      this.$emit("nomeDoEvento", (param1, param2) => {
-        console.log("Função de callback");
-        console.log(param1);
-        console.log(param2);
-      });
-    },
+  // methods: {
+  //   navegarPara() {
+  //     this.$emit("nomeDoEvento", (param1, param2) => {
+  //       console.log("Função de callback");
+  //       console.log(param1);
+  //       console.log(param2);
+  //     });
+  //   },
+  // },
+  props: {
+    funcaoCallback: Function,
   },
 };
 </script>

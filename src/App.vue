@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopoComponent @nomeDoEvento="$event('Texto 1', 12339)" />
+    <TopoComponent :funcaoCallback="acao()" />
     <button @click="desmontarComponente()">
       Desmontar o componente conteúdo
     </button>
@@ -25,8 +25,8 @@ export default {
     desmontarComponente() {
       this.visibilidade = false;
     },
-    acao(event) {
-      console.log(event);
+    acao() {
+      console.log("Deu bom");
     },
   },
 };
