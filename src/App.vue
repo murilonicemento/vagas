@@ -1,10 +1,7 @@
 <template>
   <div>
-    <TopoComponent :funcaoCallback="acao()" />
-    <button @click="desmontarComponente()">
-      Desmontar o componente conteúdo
-    </button>
-    <ConteudoComponent v-if="visibilidade" />
+    <TopoComponent @navegar="componente = $event" />
+    <ConteudoComponent v-if="visibilidade" :conteudo="componente" />
   </div>
 </template>
 
@@ -20,15 +17,8 @@ export default {
   },
   data: () => ({
     visibilidade: true,
+    componente: "HomeView",
   }),
-  methods: {
-    desmontarComponente() {
-      this.visibilidade = false;
-    },
-    acao() {
-      console.log("Deu bom");
-    },
-  },
 };
 </script>
 
