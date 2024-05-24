@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopoComponent @nomeDoEvento="acao($event)" />
+    <TopoComponent @nomeDoEvento="$event('Texto 1', 12339)" />
     <button @click="desmontarComponente()">
       Desmontar o componente conteúdo
     </button>

@@ -44,7 +44,11 @@ export default {
   name: "TopoComponent",
   methods: {
     navegarPara() {
-      this.$emit("nomeDoEvento", "hello my friend");
+      this.$emit("nomeDoEvento", (param1, param2) => {
+        console.log("Função de callback");
+        console.log(param1);
+        console.log(param2);
+      });
     },
   },
 };
