@@ -7,7 +7,10 @@
           <div>
             <div class="form-check form-switch">
               <input type="checkbox" class="form-check-input" />
-              <label type="checkbox" class="form-check-label"></label>
+              <label type="checkbox" class="form-check-label">Favoritar</label>
+              <button class="btn btn-danger" @click="dispararEventoMitt()">
+                Teste
+              </button>
             </div>
           </div>
         </div>
@@ -64,6 +67,11 @@ export default {
     publicacao: {
       type: String,
       required: true,
+    },
+  },
+  methods: {
+    dispararEventoMitt() {
+      this.emitter.emit("eventoGlobal1", "Teste captura evento parâmetro");
     },
   },
   computed: {
