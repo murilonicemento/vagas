@@ -6,11 +6,12 @@
           <div>{{ titulo }}</div>
           <div>
             <div class="form-check form-switch">
-              <input type="checkbox" class="form-check-input" />
+              <input
+                type="checkbox"
+                class="form-check-input"
+                v-model="favoritada"
+              />
               <label type="checkbox" class="form-check-label">Favoritar</label>
-              <button class="btn btn-danger" @click="dispararEventoMitt()">
-                Teste
-              </button>
             </div>
           </div>
         </div>
@@ -31,6 +32,18 @@
 <script>
 export default {
   name: "VagasComponent",
+  data: () => ({
+    favoritada: false,
+  }),
+  watch: {
+    favoritada(valorNovo) {
+      if (valorNovo) {
+        this.emitter.emit("favoritarVaga", this.titulo);
+      } else {
+        this.emitter.emit("desfavoritarVaga", this.titulo);
+      }
+    },
+  },
   // props: ["titulo", "descricao", "salario", "modalidade", "tipo", "publicacao"],
   props: {
     titulo: {
@@ -69,11 +82,7 @@ export default {
       required: true,
     },
   },
-  methods: {
-    dispararEventoMitt() {
-      this.emitter.emit("eventoGlobal1", "Teste captura evento parâmetro");
-    },
-  },
+  methods: {},
   computed: {
     getModalidade() {
       switch (this.modalidade) {
