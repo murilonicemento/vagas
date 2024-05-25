@@ -50,7 +50,6 @@ export default {
       type: String,
       required: true,
       validator(prop) {
-        console.log("Prop: ", prop);
         if (prop.length < 4) return false;
         return true;
         // return true; -> se estiver válido
